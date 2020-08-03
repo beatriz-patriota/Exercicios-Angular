@@ -1,0 +1,13 @@
+<div>
+  <!-- <label>Digite o valor:</label>
+  <input type="number"  /> -->
+  <form class="example-form">
+    &nbsp;<button (click)="aumentar()" mat-stroked-button color="primary"> + </button>
+    <mat-form-field class="example-full-width">
+      <mat-label >Digite um número</mat-label>
+    <input matInput [ngModelOptions]="{ standalone: true }" [(ngModel)]="valor">
+  </mat-form-field>
+  &nbsp;<button (click)="diminuir()" mat-stroked-button color="primary"> - </button>
+</form>
+</div>
+<br /><br />

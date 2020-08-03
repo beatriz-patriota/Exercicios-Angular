@@ -1,0 +1,31 @@
+<div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label >Insira o valor inicial:</mat-label>
+      <input matInput [(ngModel)]="ValorInicial" [ngModelOptions]="{ standalone: true }">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Insira a taxa de juros:</mat-label>
+      <input matInput [(ngModel)]="TaxaJuros" [ngModelOptions]="{ standalone: true }" (ngModelChange)="ReplaceVirgula()">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Insira o período em meses:</mat-label>
+      <input matInput [(ngModel)]="TempoMeses" [ngModelOptions]="{ standalone: true }">
+    </mat-form-field>
+  </form>
+  <!-- <label>Insira o valor inicial: R$</label>
+  <input type="number" [(ngModel)]="ValorInicial" />
+  <br /><br />
+  <label>Insira a taxa de Juros: </label>
+  <input type="number" [(ngModel)]="TaxaJuros" />&nbsp;% <br /><br />
+  <label>Insira o período em meses:</label>
+  &nbsp;<input type="number" [(ngModel)]="TempoMeses" /> <br /><br /> -->
+  &nbsp;<button (click)="Juros()" mat-stroked-button color="primary">Calcular</button> <br /><br />
+  <p
+    >O resultado do valor com os juros compostos é de: R$
+    {{ resultadoJuros }}</p
+  >
+  <br /><br />
+</div>

@@ -1,0 +1,23 @@
+<div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label >Primeiro Valor</mat-label>
+      <input matInput [(ngModel)]="valor1" [ngModelOptions]="{ standalone: true }">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Segundo Valor</mat-label>
+      <input matInput [(ngModel)]="valor2" [ngModelOptions]="{ standalone: true }">
+    </mat-form-field>
+  </form>
+
+  <!-- <label>Digite valor 1:</label>
+  <input type="text" [(ngModel)]="valor1" />
+  <br><br>
+  <label>Digite valor 2:</label>
+  <input type="text" [(ngModel)]="valor2" />
+  <br><br> -->
+  &nbsp;<button (click)="calcular()" mat-stroked-button color="primary">Calcular</button> <br /><br />
+  <p>O resultado é: <b>{{ resultado }}</b></p>
+</div>
+<br><br>

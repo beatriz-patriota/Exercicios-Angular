@@ -1,0 +1,53 @@
+<p>Preencha o formulário abaixo:</p>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label >Nome:</mat-label>
+    <input matInput [(ngModel)]="objPessoa.Nome" [ngModelOptions]="{ standalone: true }">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Data de nascimento:</mat-label>
+    <input matInput [(ngModel)]="objPessoa.DataNascimento" [ngModelOptions]="{ standalone: true }" (ngModelChange)="ReplaceVirgula()">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Telefone:</mat-label>
+    <input matInput [(ngModel)]="objPessoa.Telefone" [ngModelOptions]="{ standalone: true }">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Endereço:</mat-label>
+    <input matInput [(ngModel)]="objPessoa.Endereco" [ngModelOptions]="{ standalone: true }">
+  </mat-form-field>
+</form>
+<!-- <label>Nome:</label>
+<input type="text" [(ngModel)]="objPessoa.Nome" />
+&nbsp;<label>Data de Nascimento:</label>
+<input type="text" [(ngModel)]="objPessoa.DataNascimento" />
+<br /><br />
+<label>Telefone:</label>
+<input type="text" [(ngModel)]="objPessoa.Telefone" />
+&nbsp;<label>Endereço:</label>
+<input type="text" [(ngModel)]="objPessoa.Endereco" />
+<br /><br /> -->
+<button (click)="Salvar()" mat-stroked-button color="primary">Salvar</button>
+<div *ngIf="mostrarElementos == false">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lstObjPessoa">
+        <td>{{ item.Nome }}</td>
+        <td>{{ item.DataNascimento }}</td>
+        <td>{{ item.Telefone }}</td>
+        <td>{{ item.Endereco }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
